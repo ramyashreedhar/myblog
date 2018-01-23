@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Ramya's Blog!!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+     <nav class="navbar navbar-expand-lg  navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="{% url 'home' %}">Ramya's Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+
+              <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+              <a class="nav-item nav-link" href="https://www.goodreads.com/">GoodReads</a>
+              <div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button>
+  <div class="dropdown-menu">
+   <a class="dropdown-item" href="https://gaana.com/">Music</a>
+    <a class="dropdown-item" href='https://www.readanybook.com/genre/thriller-4'>Horror Novels</a>
+    <a class="dropdown-item" href="https://pizzaonline.dominos.co.in/">Pizza</a>
+
+  </div>
+</div>
+
+            </div>
+        </div>
+      </nav>
+
+
+
+
+    <div class="container">
+        <h1 >About Me!!</h1>
+        <br />
+        hmm... what should i say about myself??
+        Let me think..................
+        {% load static %}
+        <img src="{% static 'sitepages/think.jpg' %}"  class="img-responsive"  style="height:55px;"/>
+        <br />
+        <br />
+        <p>I would describe myself as a happy go lucky person who takes life's challenges  as they come , a big foodie ,music lover who loves to sing,a big shopaholic,and a big big  book lover hooked to kindle !! </p>
+
+        <br />
+        sounds like a cool intro i guess...
+        {% load static %}
+        <img src="{% static 'sitepages/cool.jpg' %}"  class="img-responsive"  style="height:45px;"/>
+        <br />
+        <br />
+
+   </div>
+
+
+  </body>
+</html>

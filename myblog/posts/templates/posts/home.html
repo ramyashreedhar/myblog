@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Ramya's Blog!!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+   {% load static %}
+<style>
+.divstyle{
+  border: 1px solid powderblue;
+  background:#D3D3D3;
+ background-image:url({% static 'posts/nice-background.jpg' %});
+
+}
+#div1{
+width: 300px;
+    height: 66px;
+    background-color:light green;
+    font-weight: bold;
+    position: relative;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+
+ animation-timing-function: linear;
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+}
+
+</style>
+  </head>
+  <body class="divstyle">
+
+     <nav class="navbar navbar-expand-lg  navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="{% url 'home' %}">Ramya's Blog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+
+             <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+            <a class="nav-item nav-link" href="https://www.goodreads.com/">GoodReads</a>
+              <div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Favorites
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="https://gaana.com/">Music</a>
+    <a class="dropdown-item" href='https://www.readanybook.com/genre/thriller-4'>Horror Novels</a>
+    <a class="dropdown-item" href="https://pizzaonline.dominos.co.in/">Pizza</a>
+
+  </div>
+</div>
+
+
+
+          </div>
+      </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">Welcome to Ramya's Blog!!</h1>
+        <br />
+        {% load static %}
+        <img src="{% static 'posts/bmain.jpg' %}"  class="img-responsive  rounded mx-auto d-block " style="height:250px;width:450px;"/>
+        <br />
+        <div id="div1" style="border:8px solid blue;" class="rounded-circle"> <h2 style = "text-align:center;vertical-align:middle;color:blue;pady:200px;padx:50px;">Latest Posts</h2></div>
+
+        <hr />
+        {% for post in posts.all%}
+        <a style="color:blue;" href="{% url 'post_details' post.id %}"><h3 >{{post.title}}</h3></a>
+        <h4><i class="material-icons">schedule</i> {{ post.pub_date_custom}}</h4>
+        <br />
+        <img src="{{post.image.url}}" class="img-responsive  rounded mx-auto d-block " style="max_height:150px;"/>
+        <br />
+        <br />
+        <p style="font-size:24px;color:powder blue;">{{ post.summary }}</p>
+        <br />
+        <br />
+        <br />
+    {% endfor %}
+   </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% load static %}
+      <script src="{% static 'h1Color_Changer.js' %}"></script>
+
+  </body>
+</html>
